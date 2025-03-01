@@ -12,9 +12,16 @@ public class HelloRestController {
     public String sayHello() {
         return "Hello From BridgeLabz!!!";
     }
+
     @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
     public String sayHello(@RequestParam(value = "name") String name) {
 
         return "Hello" + name + "!";
     }
+
+    // curl localhost:8080/hello/param/Narayan -w "\n" @GetMapping("/param/{name}")
+    public String sayHelloParam(@PathVariable String name) {
+        return "Hello" + name + "!";
+    }
 }
+
